@@ -5,8 +5,8 @@
 
  class Orderdetails extends Model
 {
-    protected $primaryKey="orderid";
-    protected $fillable = ['productid','quantity','price'];
+    protected $primaryKey="orderdetailsid";
+    protected $fillable = ['orderid','productid','quantity','price'];
 
 }
 ?>

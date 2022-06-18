@@ -24,7 +24,7 @@
 								<a href="#" class="mr-2" style="color: #000;">100 <span style="color: #bbb;">Rating</span></a>
 							</p>
 							</div>
-    				<p class="price"><span>Rs. {{$prlist[0]->price}} Per {{$prlist[0]->unit}}</span></p>
+    				<p class="price"><span>Rs. {{$prlist[0]->price}} / {{$prlist[0]->unit}}</span></p>
     				<p>{{$prlist[0]->description}}
 						</p>
 						<div class="row mt-4">

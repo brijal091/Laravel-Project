@@ -7,6 +7,8 @@ use App\Http\Controllers\CityController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\RazorpayController;
 
 
 /*
@@ -31,7 +33,8 @@ Route::get('/login', function () {
 
 
 
-
+Route::get('razorpay', [RazorpayController::class, 'razorpay'])->name('razorpay');
+Route::post('razorpaypayment', [RazorpayController::class, 'payment'])->name('payment');
 
 
 Route::get('/adminchangepassword', function () {
@@ -40,6 +43,8 @@ Route::get('/adminchangepassword', function () {
 
 Route::get('/userhomepage','App\Http\Controllers\ProductController@userhomepage');
 Route::get('/productdetail','App\Http\Controllers\ProductController@productdetail');
+Route::get('/userproductdetail','App\Http\Controllers\ProductController@userproductdetail');
+
 Route::get('/userprofile','App\Http\Controllers\RegistrationController@viewuserprofile');
 Route::post('/updateprofile','App\Http\Controllers\RegistrationController@updateprofile');
 Route::post('/updateuserpassword','App\Http\Controllers\RegistrationController@updateuserpassword');
@@ -76,6 +81,17 @@ Route::get('/deletecategory/{id}','App\Http\Controllers\CategoryController@delet
 Route::get('/editcategory/{id}','App\Http\Controllers\CategoryController@editcategory');
 Route::post('/updatecategory','App\Http\Controllers\CategoryController@updatecategory');
 
+Route::get('/blog','App\Http\Controllers\BlogController@viewblog');
+Route::post('/addblog','App\Http\Controllers\BLogController@insertblog');
+Route::get('/deleteblog/{id}','App\Http\Controllers\BlogController@deleteblog');
+Route::get('/editblog/{id}','App\Http\Controllers\BlogController@editblog');
+Route::post('/updateblog','App\Http\Controllers\BlogController@updateblog');
+Route::get('/viewblog','App\Http\Controllers\BlogController@viewbloguser');
+Route::get('/singleblog','App\Http\Controllers\BlogController@viewsinglebloguser');
+
+Route::get('/loginviewblog','App\Http\Controllers\BlogController@viewblogloginuser');
+Route::get('/loginsingleblog','App\Http\Controllers\BlogController@viewsingleblogloginuser');
+
 
 
 Route::get('/city','App\Http\Controllers\CityController@viewcity');
@@ -98,3 +114,33 @@ Route::post('/addunit','App\Http\Controllers\MeasurementController@insertunit');
 Route::get('/deleteunit/{id}','App\Http\Controllers\MeasurementController@deleteunit');
 Route::get('/editunit/{id}','App\Http\Controllers\MeasurementController@editunit');
 Route::post('/updateunit','App\Http\Controllers\MeasurementController@updateunit');
+
+Route::get('/contactus','App\Http\Controllers\RegistrationController@viewcontact');
+Route::get('/aboutus','App\Http\Controllers\RegistrationController@viewaboutus');
+Route::get('/userlist','App\Http\Controllers\RegistrationController@viewuserlist');
+
+
+Route::get('/usercontactus','App\Http\Controllers\RegistrationController@viewusercontact');
+Route::get('/useraboutus','App\Http\Controllers\RegistrationController@viewuseraboutus');
+
+Route::get('/cart','App\Http\Controllers\CartController@viewcart');
+Route::get('/deletecart','App\Http\Controllers\CartController@deletecart');
+
+Route::post('/addtocart','App\Http\Controllers\CartController@addtocart');
+
+Route::get('/order','App\Http\Controllers\RazorpayController@vieworder');
+Route::get('/viewuserorder','App\Http\Controllers\RazorpayController@viewuserorder');
+Route::get('/viewalluserorder','App\Http\Controllers\RazorpayController@viewalluserorder');
+
+Route::get('/deliver','App\Http\Controllers\RazorpayController@deliver');
+
+Route::get('/forgotpassword','App\Http\Controllers\RegistrationController@viewforgotpassword');
+
+Route::post('/sendpassword','App\Http\Controllers\RegistrationController@sendpassword');
+
+Route::get('/userreport','App\Http\Controllers\RegistrationController@userreport');
+Route::get('/productreport','App\Http\Controllers\ProductController@productreport');
+Route::get('/orderreport','App\Http\Controllers\RazorpayController@orderreport');
+
+Route::get('/statuswiseorderreport','App\Http\Controllers\RazorpayController@statuswiseorderreport');
+

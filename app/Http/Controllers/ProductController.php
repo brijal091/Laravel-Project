@@ -137,12 +137,44 @@ class ProductController extends Controller
 
         
               $cid=$request->get("x");
-              $prlist=DB::table('products')->select('products.*','categories.*','measurements.*')->join('categories', 'categories.categoryid', '=', 'products.categoryid')->join('measurements', 'measurements.unitid', '=', 'products.unitid')->where('products.categoryid','=',$cid)->get();
+              $prlist=DB::table('products')->select('products.*','categories.*','measurements.*')->join('categories', 'categories.categoryid', '=', 'products.categoryid')->join('measurements', 'measurements.unitid', '=', 'products.unitid')->where('products.productid','=',$cid)->get();
        
         
         return view('productdetail',compact('prlist'));
       }
      
+
+      public function userproductdetail(Request $request)
+      {
+
+        
+              $cid=$request->get("x");
+              $prlist=DB::table('products')->select('products.*','categories.*','measurements.*')->join('categories', 'categories.categoryid', '=', 'products.categoryid')->join('measurements', 'measurements.unitid', '=', 'products.unitid')->where('products.productid','=',$cid)->get();
+       
+        
+        return view('userproductdetail',compact('prlist'));
+      }
+     
+
+      
+public function productreport(Request $request)
+{
+
+  $calist=Category::all();
+
+  if($request->get("t1")!=null)
+  {
+    $id=$request->get("t1");
+    $prolist=DB::table('products')->select('products.*','categories.*','measurements.*')->join('categories', 'categories.categoryid', '=', 'products.categoryid')->join('measurements', 'measurements.unitid', '=', 'products.unitid')->where('products.categoryid','=',$id)->get();
+       
+  }
+  else{
+  $prolist=[];
+  }
+  
+  return view('productreport',compact('calist','prolist'));
+   
+}
 
     
 }

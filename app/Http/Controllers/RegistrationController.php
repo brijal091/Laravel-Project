@@ -16,6 +16,8 @@ use App\Models\Registration;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Mail\NotifyMail;
+use Mail;
 
 
 class RegistrationController extends Controller
@@ -47,7 +49,69 @@ class RegistrationController extends Controller
    
 }
 
-  
+public function viewforgotpassword()
+{
+
+  return view('forgotpassword');
+   
+}
+
+public function sendpassword(Request $request)
+  {
+    $t1=$request->post("t1");
+
+    $ad= Registration::where('emailid', $t1)
+                ->get(['firstname','lastname','password','emailid']);
+                if(count($ad)==0)
+                {
+                  return redirect('forgotpassword?x=0');
+        
+                }
+                else{
+
+                  Mail::to($ad[0]->emailid)->send(new NotifyMail($ad[0]->password));
+
+               
+                  return redirect('forgotpassword?x=1');
+          
+                }
+
+  }
+
+
+public function viewaboutus()
+{
+
+  return view('aboutus');
+   
+}
+
+
+public function viewcontact()
+{
+
+  return view('contactus');
+   
+}
+
+
+
+public function viewuseraboutus()
+{
+
+  return view('useraboutus');
+   
+}
+
+
+public function viewusercontact()
+{
+
+  return view('usercontactus');
+   
+}
+
+
 public function viewregistration()
 {
 
@@ -68,6 +132,37 @@ public function userchangepassword(Request $request)
 
    
 }
+
+
+public function viewuserlist(Request $request)
+{
+
+  $rglist=Registration::all();
+  
+  return view('userlist',compact('rglist'));
+
+   
+}
+
+public function userreport(Request $request)
+{
+
+  $ctlist=City::all();
+
+  if($request->get("t1")!=null)
+  {
+    $id=$request->get("t1");
+    $rglist=DB::table('registrations')->join('cities','cities.cityid','=','registrations.cityid')->select('registrations.*','cities.*')->where('registrations.cityid','=',$id)->get();
+   
+  }
+  else{
+  $rglist=[];
+  }
+  
+  return view('userreport',compact('ctlist','rglist'));
+   
+}
+
 
 
 public function viewuserprofile(Request $request)
@@ -173,7 +268,7 @@ public function AddRegistration(Request $request)
         
        $ad= Registration::where('emailid', $l)
                 ->where('password', $p)
-                ->get(['firstname','lastname','userid']);
+                ->get(['firstname','lastname','userid','emailid']);
         if(count($ad)==0)
         {
             $msg="Invalid Loginid or Password";
@@ -184,6 +279,8 @@ public function AddRegistration(Request $request)
 
             $request->session()->put('name',$ad[0]->firstname." ".$ad[0]->lastname);
             $request->session()->put('id',$ad[0]->userid);
+            $request->session()->put('email',$ad[0]->emailid);
+            
             
 
           return redirect('userwelcome');

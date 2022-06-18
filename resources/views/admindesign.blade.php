@@ -17,7 +17,8 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{!! asset('theam/css/vertical-layout-light/style.css') !!}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{!! asset('theam/images/favicon.png') !!}" />
+  <link rel="shortcut icon" href="{!! asset('theam/images/logo.png') !!}" />
+  
 </head>
 
 <body>
@@ -26,7 +27,7 @@
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-          <a class="navbar-brand brand-logo" href="../../index.html"><img src="{!! asset('theam/images/logo.svg') !!}" alt="logo"/></a>
+           <a class="navbar-brand brand-logo" href="../../index.html"><img src="{!! asset('theam/images/logo.png') !!}" style="width:50px;height:50px" alt="logo"/><span style="color:white;font-size:15px">&nbsp;&nbsp;Agriculture Hub</span></a>
           <a class="navbar-brand brand-logo-mini" href="../../index.html"><img src="{!! asset('theam/images/logo-mini.svg') !!}" alt="logo"/></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="typcn typcn-th-menu"></span>
@@ -266,27 +267,27 @@
             <a class="nav-link" data-toggle="collapse" href="#icons" aria-expanded="false" aria-controls="icons">
               <i class="typcn typcn-compass menu-icon"></i>
               <span class="menu-title">Orders</span>
+
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="icons">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/icons/mdi.html">Mdi icons</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/viewuserorder">New Orders</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/viewalluserorder">Orders</a></li>
+                
               </ul>
             </div>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+            <a class="nav-link"  href="/userlist" aria-expanded="false" aria-controls="form-elements">
               <i class="typcn typcn-user-add-outline menu-icon"></i>
               <span class="menu-title">User</span>
-              <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="auth">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/login.html"> Login </a></li>
-                <li class="nav-item"> <a class="nav-link" href="../../pages/samples/register.html"> Register </a></li>
-              </ul>
-            </div>
+           
           </li>
+           
+        
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
               <i class="typcn typcn-globe-outline menu-icon"></i>
@@ -302,6 +303,16 @@
               </ul>
             </div>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link"  href="/blog" >
+            <i class="typcn typcn-th-small-outline menu-icon"></i>
+            
+              <span class="menu-title">Blog</span>
+            </a>
+            </li>
+          
+
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
               <i class="typcn typcn-chart-pie-outline menu-icon"></i>
@@ -310,7 +321,11 @@
             </a>
             <div class="collapse" id="charts">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="../../pages/charts/chartjs.html">ChartJs</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/productreport">Product Report</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/userreport">User Report</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/orderreport">Date Wise Order Report</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/statuswiseorderreport">Status Wise Order Report</a></li>
+                
               </ul>
             </div>
           </li>

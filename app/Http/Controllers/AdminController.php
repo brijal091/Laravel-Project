@@ -11,6 +11,10 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
 
 use App\Models\Admin;
+use App\Models\Product;
+use App\Models\Ordermaster;
+
+
 
 class AdminController extends Controller
 {
@@ -25,7 +29,15 @@ class AdminController extends Controller
   
   public function adminwelcome(Request $request)
   {
-      return view('adminwelcome');
+      $prolist=Product::all();
+
+      //$data=Ordermaster::all();
+      $orderlist=DB::table('ordermasters')->select(DB::raw('count(orderid) as `data`'),DB::raw('YEAR(created_at) year, MONTH(created_at) month'))
+->groupby('year','month')
+->get();
+
+     //print_r($orderlist[0]->month);
+     return view('adminwelcome',compact('prolist','orderlist'));
   }
 
     public function CheckAdminLogin(Request $request) 

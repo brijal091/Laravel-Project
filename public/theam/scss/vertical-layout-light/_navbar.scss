@@ -10,6 +10,7 @@
 
   .navbar-brand-wrapper {
     background: theme-color(primary);
+    // background: #82ae46;
     transition: width $action-transition-duration $action-transition-timing-function, background $action-transition-duration $action-transition-timing-function;
     -webkit-transition: width $action-transition-duration $action-transition-timing-function, background $action-transition-duration $action-transition-timing-function;
     -moz-transition: width $action-transition-duration $action-transition-timing-function, background $action-transition-duration $action-transition-timing-function;

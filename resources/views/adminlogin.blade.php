@@ -15,7 +15,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{!! asset('theam/css/vertical-layout-light/style.css') !!}">
   <!-- endinject -->
-  <link rel="shortcut icon" href="{!! asset('theam/images/favicon.png') !!}" />
+  <link rel="shortcut icon" href="{!! asset('theam/images/logo.png') !!}" />
 </head>
 
 <body>
@@ -26,9 +26,9 @@
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-light text-left py-5 px-4 px-sm-5">
               <div class="brand-logo">
-                <img src="{!! asset('theam/images/logo-dark.svg') !!}" alt="logo">
+                <img src="{!! asset('theam/images/logo.png') !!}" style="width:100px" alt="logo">
               </div>
-              <h4>Hello! let's get started</h4>
+              <h4>Agriculture Hub</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
               <form class="pt-3" action="/CheckAdminLogin" method="post">
                 @csrf

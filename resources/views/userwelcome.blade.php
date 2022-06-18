@@ -30,20 +30,20 @@
     						<h3><a href="#">{{$pr->productname}}</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="price-sale">Rs. {{$pr->price}} Per {{$pr->unit}}</span></p>
+		    						<p class="price"><span class="price-sale">Rs. {{$pr->price}} / {{$pr->unit}}</span></p>
 
 		    					</div>
 	    					</div>
 	    					<div class="bottom-area d-flex px-3">
 	    						<div class="m-auto d-flex">
-	    							<a href="/productdetail?x={{$pr->productid}}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
+	    							<a href="/userproductdetail?x={{$pr->productid}}" class="add-to-cart d-flex justify-content-center align-items-center text-center">
 	    								<span><i class="ion-ios-menu"></i></span>
 	    							</a>
-	    							<a href="/login" class="buy-now d-flex justify-content-center align-items-center mx-1">
+	    							<a href="/userproductdetail?x={{$pr->productid}}" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
 	    							</a>
-	    							<a href="/login" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
+	    							<!-- <a href="/login" class="heart d-flex justify-content-center align-items-center ">
+	    								<span><i class="ion-ios-heart"></i></span> -->
 	    							</a>
     							</div>
     						</div>

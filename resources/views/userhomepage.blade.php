@@ -28,7 +28,7 @@
     						<h3><a href="#">{{$pr->productname}}</a></h3>
     						<div class="d-flex">
     							<div class="pricing">
-		    						<p class="price"><span class="price-sale">Rs. {{$pr->price}} Per {{$pr->unit}}</span></p>
+		    						<p class="price"><span class="price-sale">Rs. {{$pr->price}} / {{$pr->unit}}</span></p>
 
 		    					</div>
 	    					</div>
@@ -40,9 +40,9 @@
 	    							<a href="/login" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
 	    							</a>
-	    							<a href="/login" class="heart d-flex justify-content-center align-items-center ">
+	    							<!-- <a href="/login" class="heart d-flex justify-content-center align-items-center ">
 	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
+	    							</a> -->
     							</div>
     						</div>
     					</div>

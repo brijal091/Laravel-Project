@@ -13,13 +13,13 @@
 	          		<div class="col-md-12">
 	                <div class="form-group">
 	                	<label for="firstname">Loginid</label>
-	                  <input type="text"  name="t1" class="form-control" placeholder="">
+	                  <input type="text"  name="t1" class="form-control" required placeholder="">
 	                </div>
 	              </div>
 	              <div class="col-md-12">
 	                <div class="form-group">
 	                	<label for="lastname">Password</label>
-	                  <input type="password" name="t2" class="form-control" placeholder="">
+	                  <input type="password" name="t2" class="form-control" required placeholder="">
 	                </div>
                 </div>
                
@@ -40,7 +40,7 @@
                @endif
              <br>
              <br>
-             <a href="">Forgot Password</a>
+             <a href="/forgotpassword">Forgot Password</a>
 
              <br>
              <br>

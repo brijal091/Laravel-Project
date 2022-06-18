@@ -5,8 +5,8 @@
 
  class Ordermaster extends Model
 {
-    protected $primaryKey="oderid";
-    protected $fillable = ['orderstate','userid','payment','paymentstate','orderstate'];
+    protected $primaryKey="orderid";
+    protected $fillable = ['userid','payment','paymentstate','paymentid','orderstate'];
 
 }
 ?>
