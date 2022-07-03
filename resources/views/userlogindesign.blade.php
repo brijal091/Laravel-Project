@@ -72,6 +72,8 @@
               	<a class="dropdown-item" href="/userprofile">Profile</a>
                 <a class="dropdown-item" href="/userchangepassword">Change Password</a>
                 <a class="dropdown-item" href="/order">Order History</a>
+                <a class="dropdown-item" href="/feedback">Feedback</a>
+                
                 
               </div>
 

@@ -144,3 +144,11 @@ Route::get('/orderreport','App\Http\Controllers\RazorpayController@orderreport')
 
 Route::get('/statuswiseorderreport','App\Http\Controllers\RazorpayController@statuswiseorderreport');
 
+Route::get('/feedback','App\Http\Controllers\FeedbackController@viewfeedback');
+Route::post('/addfeedback','App\Http\Controllers\FeedbackController@insertfeedback');
+
+Route::get('/viewfeedbackadmin','App\Http\Controllers\FeedbackController@viewfeedbackadmin');
+Route::get('/deletefeedback','App\Http\Controllers\FeedbackController@deletefeedback');
+
+
+

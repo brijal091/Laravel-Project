@@ -15,6 +15,7 @@ class BlogController extends Controller
   
     public function viewblog(Request $request) 
     {
+    
         $blist=blog::all();
         return view('blog',compact('blist'));
      }

@@ -287,6 +287,14 @@
            
           </li>
            
+          <li class="nav-item">
+            <a class="nav-link"  href="/viewfeedbackadmin" aria-expanded="false" aria-controls="form-elements">
+              <i class="typcn typcn-user-add-outline menu-icon"></i>
+              <span class="menu-title">Feedback</span>
+            </a>
+           
+          </li>
+           
         
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#error" aria-expanded="false" aria-controls="error">
